@@ -29,7 +29,7 @@ export const login =
             dispatch(setToken(token));
             dispatch(setUser(user));
 
-            navigate("/");
+            navigate("/home");
 
             toast.success("Login success");
         } catch (error) {
@@ -70,7 +70,7 @@ export const register =
             dispatch(setUser(user));
             dispatch(setToken(token));
 
-            navigate("/");
+            navigate("/home");
             toast.success("Register success");
         } catch (error) {
             toast.error(error?.response?.data?.message);

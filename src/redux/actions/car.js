@@ -47,7 +47,7 @@ export const getCar = (navigate, id) => async (dispatch, getState) => {
         dispatch(setCar(data));
     } catch (error) {
         toast.error(error?.response?.data?.message);
-        navigate("/");
+        navigate("/home");
     }
 };
 
@@ -100,7 +100,7 @@ export const addCar =
             await axios.request(config);
 
             toast.success("Car added successfully");
-            navigate("/");
+            navigate("/home");
         } catch (error) {
             toast.error(error?.response?.data?.message);
         } finally {
@@ -161,7 +161,7 @@ export const updateCar =
 
             toast.success("Car updated successfully");
             dispatch(getCars(setLoading));
-            navigate("/");
+            navigate("/home");
         } catch (error) {
             toast.error(error?.response?.data?.message);
         } finally {

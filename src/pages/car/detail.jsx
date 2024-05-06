@@ -158,7 +158,9 @@ const CarDetail = () => {
                                         <div className="d-flex justify-content-center">
                                             <button
                                                 className="btn btn-primary"
-                                                onClick={() => navigate("/")}
+                                                onClick={() =>
+                                                    navigate("/home")
+                                                }
                                             >
                                                 Back
                                             </button>

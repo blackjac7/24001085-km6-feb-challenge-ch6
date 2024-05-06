@@ -12,7 +12,7 @@ const Protected = ({ children, roles }) => {
 
     useEffect(() => {
         // get user profile if we have token
-        dispatch(getProfile(navigate, null, "/login"));
+        dispatch(getProfile(navigate, null, "/"));
     }, [dispatch, navigate]);
 
     useEffect(() => {
@@ -20,7 +20,7 @@ const Protected = ({ children, roles }) => {
             // check if the user has access to this pages or not
             if (roles?.length > 0) {
                 if (!roles?.includes(user?.role)) {
-                    navigate("/");
+                    navigate("/home");
                 }
             }
         }

@@ -24,11 +24,14 @@ const NavbarComponent = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/">
-                            <p style={{ margin: 0, fontSize: "18px" }}>Home</p>
-                        </Nav.Link>
                         {user && (
                             <>
+                                <Nav.Link as={Link} to="/home">
+                                    <p style={{ margin: 0, fontSize: "18px" }}>
+                                        Home
+                                    </p>
+                                </Nav.Link>
+
                                 {user?.role === "admin" && (
                                     <Nav.Link as={Link} to="/add-car">
                                         <p

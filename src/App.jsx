@@ -13,6 +13,7 @@ import UpdateCar from "./pages/update-car";
 import Protected from "./components/Protected";
 import NonProtected from "./components/NonProtected";
 import CarDetail from "./pages/car/detail";
+import LandingPage from "./pages/landing-page";
 import store from "./redux/store";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,6 +22,16 @@ import "react-toastify/dist/ReactToastify.css";
 const router = createBrowserRouter([
     {
         path: "/",
+        element: (
+            <NonProtected>
+                <Container className="mt-5">
+                    <LandingPage />
+                </Container>
+            </NonProtected>
+        ),
+    },
+    {
+        path: "/home",
         element: (
             <Protected>
                 <Navbar />
