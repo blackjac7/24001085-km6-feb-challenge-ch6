@@ -22,6 +22,14 @@ export const getCars = (setLoading) => async (dispatch, getState) => {
 
         dispatch(setCars(data));
     } catch (error) {
+        if (error?.response?.status === 401) {
+            toast.error("Unauthorized access");
+        }
+
+        if (error?.response?.data?.message === "jwt malformed") {
+            toast.error("Please login to access this page");
+        }
+
         toast.error(error?.response?.data?.message);
     } finally {
         setLoading(false);
